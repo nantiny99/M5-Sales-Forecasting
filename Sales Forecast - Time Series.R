@@ -155,11 +155,11 @@ prophet_mae <- mae(test_data$sales, prophet_forecast_vals)
 comparison <- data.frame(
   Model = c("ARIMA", "Prophet"),
   RMSE = c(round(arima_rmse, 2), round(prophet_rmse, 2)),
-  MAPE_percent = c(round(arima_mae, 2), round(prophet_mae, 2))
+  MAE_percent = c(round(arima_mae, 2), round(prophet_mae, 2))
 )
 
 print(comparison)
 
 # Save the comparison table as CSV
-write.csv(comparison, "metrics_table1.csv", row.names = FALSE)
+write.csv(comparison, "MetricsTable.csv", row.names = FALSE)
 
